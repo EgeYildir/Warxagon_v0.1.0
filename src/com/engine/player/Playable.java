@@ -7,15 +7,15 @@ public interface Playable {     //This interface will hold vital gameplay comman
         return true;
     }
 
-    void buildMine();
+    void buildMine(Tile t);
 
-    void buildFarm();
+    void buildFarm(Tile t);
 
-    void buildSawmill();
+    void buildSawmill(Tile t);
 
-    void buildBarracks();
+    void buildBarracks(Tile t);
 
-    void buildStonewall();
+    void buildStonewall(Tile t);
 
     void levelUp(Building b);
 
