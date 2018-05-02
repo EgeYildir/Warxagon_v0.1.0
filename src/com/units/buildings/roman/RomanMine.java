@@ -2,15 +2,14 @@ package com.units.buildings.roman;
 
 import com.grid.Tile;
 import com.units.buildings.Building;
-import com.engine.player.RomanPlayer;
 
-public class RomanMine extends Building{
+public class RomanMine extends Building {
 
     private int level;
     private int iron;
 
     public RomanMine(Tile t) {
-        super(t,1000,200,300,100);
+        super(t, 1000, 200, 300, 100);
         // new Thread(this).start();
     }
 

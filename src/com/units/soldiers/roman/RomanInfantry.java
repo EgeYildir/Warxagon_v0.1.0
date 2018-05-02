@@ -1,12 +1,8 @@
 package com.units.soldiers.roman;
 
-import com.engine.GameEngine;
-import com.grid.Grid;
 import com.grid.Tile;
 import com.main.Map;
 import com.units.soldiers.Soldier;
-import javafx.animation.AnimationTimer;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 
@@ -19,9 +15,9 @@ public class RomanInfantry extends Soldier {//Aynı zamanda bir soldier objesi o
     private int iIndex, jIndex;
 
     public RomanInfantry(Map map, int iIndex, int jIndex, int healthPower, int attackPower, int defensePower, int goldCost, int woodCost, int ironCost) {
+        super(map, iIndex, jIndex, healthPower, attackPower, defensePower);
 
     }
-
 
 
     public Tile currentTile() {

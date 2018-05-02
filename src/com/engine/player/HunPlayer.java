@@ -1,14 +1,11 @@
 package com.engine.player;
 
 import com.units.buildings.Building;
-import com.units.soldiers.Soldier;
-
-import java.util.ArrayList;
 
 public class HunPlayer extends Player {
 
 
-    public HunPlayer(){
+    public HunPlayer() {
 
     }
 

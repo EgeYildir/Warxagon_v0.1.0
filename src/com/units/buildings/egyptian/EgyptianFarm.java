@@ -2,7 +2,6 @@ package com.units.buildings.egyptian;
 
 import com.grid.Tile;
 import com.units.buildings.Building;
-import com.engine.player.EgyptianPlayer;
 
 public class EgyptianFarm extends Building {
 
@@ -10,7 +9,7 @@ public class EgyptianFarm extends Building {
     private int food;
 
     public EgyptianFarm(Tile t) {
-        super(t,1000,200,100,300);
+        super(t, 1000, 200, 100, 300);
         // new Thread(this).start();
     }
 
