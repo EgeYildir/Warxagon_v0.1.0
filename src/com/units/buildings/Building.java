@@ -12,8 +12,8 @@ public abstract class Building {
         this.woodCost = woodCost;
         this.ironCost = ironCost;
         this.foodCost = foodCost;
-        this.isComplete=false;
-        this.t=t;
+        this.isComplete = false;
+        this.t = t;
         this.t.setB(this);
     }
 
@@ -34,8 +34,7 @@ public abstract class Building {
         return foodCost;
     }
 
-    public void build() {
-
+    public void repair() {
     }
 
 }

@@ -2,15 +2,14 @@ package com.units.buildings.hun;
 
 import com.grid.Tile;
 import com.units.buildings.Building;
-import com.engine.player.HunPlayer;
 
-public class HunSawMills extends Building{
+public class HunSawMills extends Building {
 
     private int level;
     private int wood;
 
     public HunSawMills(Tile t) {
-        super(t,1000,300,200,100);
+        super(t, 1000, 300, 200, 100);
         // new Thread(this).start();
     }
 
