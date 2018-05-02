@@ -46,6 +46,7 @@ public abstract class Soldier {
     }
 
 
+
     public int getHealthPower() {
         return healthPower;
     }
@@ -97,7 +98,7 @@ public abstract class Soldier {
 
     @Override
     public String toString() {
-        return "Soldiers HP:" + healthPower + " Soldiers Attack Power:" + attackPower + " Soldiers Defense Power:" + defensePower;
+        return "Soldiers HP:"  + healthPower + " Soldiers Attack Power:" + attackPower + " Soldiers Defense Power:" + defensePower;
     }
 
 }

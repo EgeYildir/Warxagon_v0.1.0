@@ -2,14 +2,15 @@ package com.units.buildings.egyptian;
 
 import com.grid.Tile;
 import com.units.buildings.Building;
+import com.engine.player.EgyptianPlayer;
 
-public class EgyptianMine extends Building {
+public class EgyptianMine extends Building{
 
     private int level;
     private int iron;
 
     public EgyptianMine(Tile t) {
-        super(t, 1000, 200, 300, 100);
+        super(t,1000,200,300,100);
         // new Thread(this).start();
     }
 

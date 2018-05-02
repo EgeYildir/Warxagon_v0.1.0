@@ -2,6 +2,7 @@ package com.units.buildings.hun;
 
 import com.grid.Tile;
 import com.units.buildings.Building;
+import com.engine.player.HunPlayer;
 
 public class HunFarm extends Building {
 
@@ -9,7 +10,7 @@ public class HunFarm extends Building {
     private int food;
 
     public HunFarm(Tile t) {
-        super(t, 1000, 200, 100, 300);
+        super(t,1000,200,100,300);
         // new Thread(this).start();
     }
 

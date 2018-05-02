@@ -1,9 +1,6 @@
 package com.engine.player;
 
 import com.units.buildings.Building;
-import com.units.soldiers.Soldier;
-
-import java.util.List;
 
 public interface Playable {     //This interface will hold vital gameplay commands that both player and ai can access easily.
     default boolean checkWinConditions() { //Used to check if a player meets winning conditions.
@@ -23,12 +20,4 @@ public interface Playable {     //This interface will hold vital gameplay comman
     void levelUp(Building b);
 
     void createInfantry();
-
-    default void moveTo(Soldier s, Tile t) {
-    }
-
-    default void attackBuilding(List<Soldier> s, Building b) {
-    }
-
-
 }

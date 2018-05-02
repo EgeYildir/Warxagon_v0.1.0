@@ -1,6 +1,4 @@
-package com.units.soldiers;
+package com.units.soldiers.roman;
 
 public interface SoldierInterface {
-
-
 }

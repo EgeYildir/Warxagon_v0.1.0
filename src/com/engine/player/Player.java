@@ -12,17 +12,13 @@ public abstract class Player implements Playable {      //An
     private int food;
     private ArrayList<Soldier> sol;
     private ArrayList<Building> bul;
-    private int sawmillcount;
-    private int farmcount;
-    private int minecount;
 
     public Player() {
-        this.gold = 5000;
-        this.iron = 5000;
-        this.wood = 5000;
-        this.food = 5000;
+        this.gold=5000;
+        this.iron=5000;
+        this.wood=5000;
+        this.food=5000;
     }
-
     public int getGold() {
         return gold;
     }

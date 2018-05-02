@@ -11,7 +11,7 @@ public class Path {
     private Stack path;
     private ArrayList<Tile> frontier;
     private ArrayList<Tile> visited;
-    private HashMap<Tile, Tile> t;
+    private HashMap<Tile,Tile> t;
 
 
     public Path(Tile initialTile, Tile targetTile, Tile[][] grid) {
@@ -25,8 +25,8 @@ public class Path {
         this.t = new HashMap<Tile, Tile>();
         this.path = new Stack();
         createPath();
-    }
 
+    }
     private void createPath() {
         this.getFrontier().add(this.getGrid()[this.getInitialX()][this.getInitialY()]);
         this.getVisited().add(this.getGrid()[this.getInitialX()][this.getInitialY()]);
@@ -56,12 +56,12 @@ public class Path {
             temp = this.getT().get(temp);
         }
         this.getPath().pop();
-    }
 
+
+    }
     private Tile[][] getGrid() {
         return grid;
     }
-
     private ArrayList<Tile> getNeighbors(Tile t) {
         ArrayList<Tile> r = new ArrayList<>();
         int x1 = t.getI();
@@ -76,39 +76,31 @@ public class Path {
                 }
 
             }
+
         }
         return r;
-    }
-
-    //needa additional methods to work
+    } //needa additional methods to work
     private ArrayList<Tile> getFrontier() {
         return frontier;
     }
-
     private ArrayList<Tile> getVisited() {
         return visited;
     }
-
     private int getInitialX() {
         return initialX;
     }
-
     private int getInitialY() {
         return initialY;
     }
-
     private int getTargetX() {
         return targetX;
     }
-
     private int getTargetY() {
         return targetY;
     }
-
     private HashMap<Tile, Tile> getT() {
         return t;
     }
-
     public Stack getPath() {
         return path;
     }

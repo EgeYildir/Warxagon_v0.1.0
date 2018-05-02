@@ -2,14 +2,15 @@ package com.units.buildings.hun;
 
 import com.grid.Tile;
 import com.units.buildings.Building;
+import com.engine.player.HunPlayer;
 
-public class HunMine extends Building {
+public class HunMine extends Building{
 
     private int level;
     private int iron;
 
     public HunMine(Tile t) {
-        super(t, 1000, 200, 300, 100);
+        super(t,1000,200,300,100);
         // new Thread(this).start();
     }
 

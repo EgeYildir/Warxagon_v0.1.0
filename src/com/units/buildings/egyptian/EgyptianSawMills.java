@@ -2,14 +2,15 @@ package com.units.buildings.egyptian;
 
 import com.grid.Tile;
 import com.units.buildings.Building;
+import com.engine.player.EgyptianPlayer;
 
-public class EgyptianSawMills extends Building {
+public class EgyptianSawMills extends Building{
 
     private int level;
     private int wood;
 
     public EgyptianSawMills(Tile t) {
-        super(t, 1000, 300, 200, 100);
+        super(t,1000,300,200,100);
         // new Thread(this).start();
     }
 

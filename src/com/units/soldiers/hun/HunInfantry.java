@@ -1,8 +1,11 @@
 package com.units.soldiers.hun;
 
+import com.grid.Grid;
 import com.grid.Tile;
 import com.main.Map;
 import com.units.soldiers.Soldier;
+import javafx.animation.AnimationTimer;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 
@@ -12,12 +15,13 @@ public class HunInfantry extends Soldier {//Aynı zamanda bir soldier objesi olm
     private double velIndex;
     private boolean isInPath;//Eğer bir yolda yürüyorsa başka bir pathe sapmasını engelleyen boolean.
 
+
     Map map;
     private Tile currentTile;
     private int iIndex, jIndex;
 
     public HunInfantry(Map map, int iIndex, int jIndex, int healthPower, int attackPower, int defensePower, int goldCost, int woodCost, int ironCost) {
-        super(map, iIndex, jIndex, healthPower, attackPower, defensePower);
+
     }
 
 

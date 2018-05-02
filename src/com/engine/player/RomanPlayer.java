@@ -1,11 +1,14 @@
 package com.engine.player;
 
 import com.units.buildings.Building;
+import com.units.soldiers.Soldier;
+
+import java.util.ArrayList;
 
 public class RomanPlayer extends Player {
 
 
-    public RomanPlayer() {
+    public RomanPlayer(){
 
     }
 
