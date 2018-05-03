@@ -1,4 +1,4 @@
-package com.engine.player;
+package engine.player;
 
 import com.units.buildings.Building;
 import com.units.soldiers.Soldier;

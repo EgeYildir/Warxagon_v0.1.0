@@ -1,7 +1,9 @@
-package com.engine.player;
+package engine.player;
 
+import GUI.Tile;
 import com.units.buildings.Building;
 import com.units.soldiers.Soldier;
+import engine.player.Player;
 
 import java.util.ArrayList;
 
@@ -14,27 +16,27 @@ public class HunPlayer extends Player {
 
 
     @Override
-    public void buildMine() {
+    public void buildMine(Tile t) {
 
     }
 
     @Override
-    public void buildFarm() {
+    public void buildFarm(Tile t) {
 
     }
 
     @Override
-    public void buildSawmill() {
+    public void buildSawmill(Tile t) {
 
     }
 
     @Override
-    public void buildBarracks() {
+    public void buildBarracks(Tile t) {
 
     }
 
     @Override
-    public void buildStonewall() {
+    public void buildStonewall(Tile t) {
 
     }
 

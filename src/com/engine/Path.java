@@ -1,4 +1,7 @@
-package com.engine;
+package engine;
+
+import GUI.Grid;
+import GUI.Tile;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,14 +10,14 @@ import java.util.Stack;
 public class Path {
     private int initialX, initialY;
     private int targetX, targetY;
-    private Tile[][] grid;
+    private Grid grid;
     private Stack path;
     private ArrayList<Tile> frontier;
     private ArrayList<Tile> visited;
     private HashMap<Tile,Tile> t;
 
 
-    public Path(Tile initialTile, Tile targetTile, Tile[][] grid) {
+    public Path(Tile initialTile, Tile targetTile, Grid grid) {
         this.initialX = initialTile.getI();
         this.initialY = initialTile.getJ();
         this.targetX = targetTile.getI();
@@ -28,17 +31,17 @@ public class Path {
 
     }
     private void createPath() {
-        this.getFrontier().add(this.getGrid()[this.getInitialX()][this.getInitialY()]);
-        this.getVisited().add(this.getGrid()[this.getInitialX()][this.getInitialY()]);
+        this.getFrontier().add(this.getGrid().get(this.getInitialX(),this.getInitialY()));
+        this.getVisited().add(this.getGrid().get(this.getInitialX(),this.getInitialY()));
         while (!(this.getFrontier().isEmpty())) {
             Tile current = this.getFrontier().get(0);
             this.getFrontier().remove(0);
-            ArrayList<Tile> n = getNeighbors(current);
+            ArrayList<Tile> n = this.grid.getNeighbors(current);
             while (!(n.isEmpty())) {
                 if (this.getVisited().contains(n.get(0))) {
                     n.remove(0);
                 } else {
-                    if (n.get(0).equals(this.getGrid()[targetX][targetY])) {
+                    if (n.get(0).equals(this.getGrid().get(this.getTargetX(),this.getTargetY()))) {
                         this.getT().put(n.get(0), current);
                         break;
                     }
@@ -49,9 +52,9 @@ public class Path {
                 }
             }
         }
-        this.getPath().push(this.getGrid()[targetX][targetY]);
-        Tile temp = this.getGrid()[targetX][targetY];
-        while (!(this.getGrid()[initialX][initialY].equals(temp))) {
+        this.getPath().push(this.getGrid().get(this.getTargetX(),this.getTargetY()));
+        Tile temp = this.getGrid().get(this.getTargetX(),this.getTargetY());
+        while (!(this.getGrid().get(this.getInitialX(),this.getInitialY()).equals(temp))) {
             this.getPath().add(this.getT().get(temp));
             temp = this.getT().get(temp);
         }
@@ -59,27 +62,10 @@ public class Path {
 
 
     }
-    private Tile[][] getGrid() {
+    private Grid getGrid() {
         return grid;
     }
-    private ArrayList<Tile> getNeighbors(Tile t) {
-        ArrayList<Tile> r = new ArrayList<>();
-        int x1 = t.getI();
-        int y1 = t.getJ();
-        for (int i = x1 - 1; i <= x1 + 1; i++) {
-            for (int j = y1 - 1; j <= y1 + 1; j++) {
-                if (i > -1 && j > -1 && (i != x1 || j != y1) && (i != this.grid.length && j != this.grid[0].length)) {
-                    if (LayoutDesigner.isNeighbor(t, this.grid[i][j]) && this.grid[i][j].isPassable()) {
-                        r.add(this.grid[i][j]);
-
-                    }
-                }
-
-            }
-
-        }
-        return r;
-    } //needa additional methods to work
+ //needa additional methods to work
     private ArrayList<Tile> getFrontier() {
         return frontier;
     }

@@ -2,6 +2,7 @@ package GUI;
 
 import javafx.util.Pair;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
@@ -39,5 +40,24 @@ public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
     }
     public int getSizeX(){return width;  }
     public int getSizeY(){return height;  }
+    //necessery methods for pathfinder
+    public ArrayList<Tile> getNeighbors(Tile t) {
+        ArrayList<Tile> r = new ArrayList<>();
+        int x1 = t.getI();
+        int y1 = t.getJ();
+        for (int i = x1 - 1; i <= x1 + 1; i++) {
+            for (int j = y1 - 1; j <= y1 + 1; j++) {
+                if (i > -1 && j > -1 && (i != x1 || j != y1) && (i != this.getSizeX() && j != this.getSizeY())) {
+                    if (t.isNeighbor(this.get(i,j)) && this.get(i,j).isPassable()) {
+                        r.add(this.get(i,j));
+
+                    }
+                }
+
+            }
+
+        }
+        return r;
+    }
 
 }

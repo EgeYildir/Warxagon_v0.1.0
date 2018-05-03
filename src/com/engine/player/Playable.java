@@ -1,5 +1,6 @@
-package com.engine.player;
+package engine.player;
 
+import GUI.Tile;
 import com.units.buildings.Building;
 
 public interface Playable {     //This interface will hold vital gameplay commands that both player and ai can access easily.
