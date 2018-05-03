@@ -1,10 +1,10 @@
-package com.units.buildings.egyptian;
+package units.buildings.egyptian;
 
-import com.grid.Tile;
-import com.units.buildings.Building;
-import com.engine.player.EgyptianPlayer;
 
-public class EgyptianBarracks extends Building{
+import GUI.Tile;
+import units.buildings.Building;
+
+public class EgyptianBarracks extends Building {
 
     private int level;
 

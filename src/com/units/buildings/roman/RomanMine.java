@@ -1,10 +1,9 @@
-package com.units.buildings.roman;
+package units.buildings.roman;
 
-import com.grid.Tile;
-import com.units.buildings.Building;
-import com.engine.player.RomanPlayer;
+import GUI.Tile;
+import units.buildings.Building;
 
-public class RomanMine extends Building{
+public class RomanMine extends Building {
 
     private int level;
     private int iron;

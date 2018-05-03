@@ -1,8 +1,7 @@
 package engine.player;
 
 import GUI.Tile;
-import com.units.buildings.Building;
-import com.units.soldiers.Soldier;
+import units.buildings.Building;
 
 
 import java.util.ArrayList;

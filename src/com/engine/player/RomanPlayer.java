@@ -1,9 +1,8 @@
 package engine.player;
 
 import GUI.Tile;
-import com.units.buildings.Building;
-import com.units.soldiers.Soldier;
-import engine.player.Player;
+import units.buildings.Building;
+
 
 import java.util.ArrayList;
 
@@ -41,12 +40,12 @@ public class RomanPlayer extends Player {
     }
 
     @Override
-    public void levelUp(Building b) {
+    public void createInfantry() {
 
     }
 
     @Override
-    public void createInfantry() {
+    public void levelUp(Building b) {
 
     }
 }

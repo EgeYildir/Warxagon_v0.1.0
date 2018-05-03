@@ -1,6 +1,7 @@
-package com.units.buildings;
+package units.buildings;
 
-import com.grid.Tile;
+
+import GUI.Tile;
 
 public abstract class Building {
     private int healthPower, woodCost, ironCost, foodCost;

@@ -1,7 +1,8 @@
 package engine.player;
 
 import GUI.Tile;
-import com.units.buildings.Building;
+
+import units.buildings.Building;
 
 public interface Playable {     //This interface will hold vital gameplay commands that both player and ai can access easily.
     default boolean checkWinConditions() { //Used to check if a player meets winning conditions.

@@ -1,8 +1,8 @@
-package com.units.buildings.hun;
+package units.buildings.hun;
 
-import com.grid.Tile;
-import com.units.buildings.Building;
-import com.engine.player.HunPlayer;
+
+import GUI.Tile;
+import units.buildings.Building;
 
 public class HunStoneWall extends Building {
 

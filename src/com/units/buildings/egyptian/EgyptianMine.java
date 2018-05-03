@@ -1,10 +1,10 @@
-package com.units.buildings.egyptian;
+package units.buildings.egyptian;
 
-import com.grid.Tile;
-import com.units.buildings.Building;
-import com.engine.player.EgyptianPlayer;
 
-public class EgyptianMine extends Building{
+import GUI.Tile;
+import units.buildings.Building;
+
+public class EgyptianMine extends Building {
 
     private int level;
     private int iron;

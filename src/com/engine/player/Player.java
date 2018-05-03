@@ -1,11 +1,14 @@
 package engine.player;
 
-import com.units.buildings.Building;
-import com.units.soldiers.Soldier;
+
+
+import units.buildings.Building;
+import units.soldiers.Soldier;
+
 
 import java.util.ArrayList;
 
-public abstract class Player implements Playable {      //An
+public abstract class Player implements Playable {
     private int gold;
     private int iron;
     private int wood;
