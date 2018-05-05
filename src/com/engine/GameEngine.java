@@ -27,30 +27,22 @@ public class GameEngine {
 
 
     }
-    private Player selectPlayer(int s) { //Initial start locations for each player needs to be determined in Grid class.
+    private Player selectPlayer(int s) {
         switch (s) {
             case 0:
-                return new EgyptianPlayer(this.grid.getStartLocation1());
+                return new EgyptianPlayer();
             case 1:
-                return new HunPlayer(this.grid.getStartLocation1());
-            case 2: return new RomanPlayer(this.grid.getStartLocation1());
+                return new HunPlayer();
+            case 2: return new RomanPlayer();
             default: return null;
 
         }
     }
     private Player selectPlayer() {
-        int x = (int) (Math.random() * 3);
-        switch (x) {
-            case 0:
-                return new EgyptianPlayer(this.grid.getStartLocation2());
-            case 1:
-                return new HunPlayer(this.grid.getStartLocation2());
-            case 2:
-                return new RomanPlayer(this.grid.getStartLocation2());
-            default:
-                return null;
-        }
+        int x = (int)(Math.random()*3);
+        return selectPlayer(x);
     }
+
     public Player getP1() {
         return p1;
     }
