@@ -22,7 +22,7 @@ public abstract class Player extends Thread implements Playable {
         this.wood=5000;
         this.food=5000;
     }
-    public int getGold() {
+    public synchronized int getGold() {
         return gold;
     }
 
@@ -30,7 +30,7 @@ public abstract class Player extends Thread implements Playable {
         this.gold = gold;
     }
 
-    public int getIron() {
+    public synchronized int getIron() {
         return iron;
     }
 
@@ -38,7 +38,7 @@ public abstract class Player extends Thread implements Playable {
         this.iron = iron;
     }
 
-    public int getWood() {
+    public synchronized int getWood() {
         return wood;
     }
 
@@ -46,7 +46,7 @@ public abstract class Player extends Thread implements Playable {
         this.wood = wood;
     }
 
-    public int getFood() {
+    public synchronized int getFood() {
         return food;
     }
 
@@ -62,7 +62,7 @@ public abstract class Player extends Thread implements Playable {
         this.sol = sol;
     }
 
-    public ArrayList<Building> getBul() {
+    public synchronized ArrayList<Building> getBul() {
         return bul;
     }
 

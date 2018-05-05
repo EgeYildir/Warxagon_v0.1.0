@@ -23,7 +23,9 @@ public class EgyptianPlayer extends Player {
      EgyptianMine b = new EgyptianMine(t);
      this.getBul().add(b);
      t.setB(b);
-
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -31,6 +33,9 @@ public class EgyptianPlayer extends Player {
         EgyptianFarm b = new EgyptianFarm(t);
         this.getBul().add(b);
         t.setB(b);
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -38,6 +43,9 @@ public class EgyptianPlayer extends Player {
         EgyptianSawMills b = new EgyptianSawMills(t);
         this.getBul().add(b);
         t.setB(b);
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -45,6 +53,9 @@ public class EgyptianPlayer extends Player {
         EgyptianBarracks b = new EgyptianBarracks(t);
         this.getBul().add(b);
         t.setB(b);
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -52,6 +63,9 @@ public class EgyptianPlayer extends Player {
         EgyptianStoneWall b = new EgyptianStoneWall(t);
         this.getBul().add(b);
         t.setB(b);
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -67,9 +81,9 @@ public class EgyptianPlayer extends Player {
     @Override
     public void run() {
         while (true) {
-            this.setFood(EgyptianFarm.getProductionPerCycle());
-            this.setWood(EgyptianSawMills.getProductionPerCycle());
-            this.setIron(EgyptianMine.getProductionPerCycle());
+            this.setFood(this.getFood() + EgyptianFarm.getProductionPerCycle());
+            this.setWood(this.getWood() +  EgyptianSawMills.getProductionPerCycle());
+            this.setIron(this.getIron() + EgyptianMine.getProductionPerCycle());
             try {
                 currentThread().sleep(10000); //how long it will wait before incrementing again
             } catch (InterruptedException e) {

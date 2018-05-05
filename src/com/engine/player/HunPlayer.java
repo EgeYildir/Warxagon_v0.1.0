@@ -23,6 +23,9 @@ public class HunPlayer extends Player {
        HunMine b = new HunMine(t);
         this.getBul().add(b);
         t.setB(b);
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -30,6 +33,9 @@ public class HunPlayer extends Player {
         HunFarm b = new HunFarm(t);
         this.getBul().add(b);
         t.setB(b);
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -37,6 +43,9 @@ public class HunPlayer extends Player {
         HunSawMills b = new HunSawMills(t);
         this.getBul().add(b);
         t.setB(b);
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -44,6 +53,9 @@ public class HunPlayer extends Player {
         HunBarracks b = new HunBarracks(t);
         this.getBul().add(b);
         t.setB(b);
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -51,6 +63,9 @@ public class HunPlayer extends Player {
         HunStoneWall b = new HunStoneWall(t);
         this.getBul().add(b);
         t.setB(b);
+        this.setIron(this.getIron()-200);
+        this.setWood(this.getFood()-200);
+        this.setFood(this.getFood()-200);
     }
 
     @Override
@@ -66,9 +81,9 @@ public class HunPlayer extends Player {
     @Override
     public void run() {
         while (true) {
-            this.setFood(HunFarm.getProductionPerCycle());
-            this.setWood(HunSawMills.getProductionPerCycle());
-            this.setIron(HunMine.getProductionPerCycle());
+            this.setFood(this.getFood() + HunFarm.getProductionPerCycle());
+            this.setWood(this.getWood() + HunSawMills.getProductionPerCycle());
+            this.setIron(this.getIron()+ HunMine.getProductionPerCycle());
             try {
                 currentThread().sleep(10000); //how long it will wait before incrementing again
             } catch (InterruptedException e) {
