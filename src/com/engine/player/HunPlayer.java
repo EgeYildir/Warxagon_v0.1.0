@@ -25,7 +25,10 @@ public class HunPlayer extends Player {
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
+<<<<<<< HEAD
 >>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
+=======
+>>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
@@ -39,7 +42,10 @@ public class HunPlayer extends Player {
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
+<<<<<<< HEAD
 >>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
+=======
+>>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
@@ -53,7 +59,10 @@ public class HunPlayer extends Player {
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
+<<<<<<< HEAD
 >>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
+=======
+>>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
@@ -67,7 +76,10 @@ public class HunPlayer extends Player {
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
+<<<<<<< HEAD
 >>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
+=======
+>>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
@@ -81,7 +93,10 @@ public class HunPlayer extends Player {
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
+<<<<<<< HEAD
 >>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
+=======
+>>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
