@@ -1,15 +1,19 @@
 package GUI;
 
+import units.buildings.Building;
+
 public class Tile extends Hexagon {
 
     //TODO: add Building and Units variables after Building and Unit class are occurred.
     private boolean isPassable;
     private int i,j;
+    private Building b;
 
 
     public Tile(double x, double y, double radius) {
         super(x, y, radius);
         isPassable=true;
+        this.b = null;
     }
 
     public void setCoordinates(int i,int j){
@@ -43,4 +47,8 @@ public class Tile extends Hexagon {
         return (this.getI() == t.getI()) && (this.getJ() == t.getJ());
     }
 
+    public void setB(Building b) {
+        this.b = b;
+        this.isPassable = false;
+    }
 }

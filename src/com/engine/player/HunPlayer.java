@@ -3,100 +3,69 @@ package engine.player;
 import GUI.Tile;
 import engine.player.Player;
 import units.buildings.Building;
+import units.buildings.hun.*;
+import units.buildings.roman.RomanTownHall;
 
 import java.util.ArrayList;
 
 public class HunPlayer extends Player {
 
 
-    public HunPlayer(){
+    public HunPlayer(Tile start){
+        this.getBul().add(new RomanTownHall(start));
+        this.start();
 
     }
 
 
     @Override
     public void buildMine(Tile t) {
-<<<<<<< HEAD
-
-=======
        HunMine b = new HunMine(t);
         this.getBul().add(b);
         t.setB(b);
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
-<<<<<<< HEAD
->>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
-=======
->>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
     public void buildFarm(Tile t) {
-<<<<<<< HEAD
-
-=======
         HunFarm b = new HunFarm(t);
         this.getBul().add(b);
         t.setB(b);
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
-<<<<<<< HEAD
->>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
-=======
->>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
     public void buildSawmill(Tile t) {
-<<<<<<< HEAD
-
-=======
         HunSawMills b = new HunSawMills(t);
         this.getBul().add(b);
         t.setB(b);
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
-<<<<<<< HEAD
->>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
-=======
->>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
     public void buildBarracks(Tile t) {
-<<<<<<< HEAD
-
-=======
         HunBarracks b = new HunBarracks(t);
         this.getBul().add(b);
         t.setB(b);
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
-<<<<<<< HEAD
->>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
-=======
->>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
     public void buildStonewall(Tile t) {
-<<<<<<< HEAD
-
-=======
         HunStoneWall b = new HunStoneWall(t);
         this.getBul().add(b);
         t.setB(b);
         this.setIron(this.getIron()-200);
         this.setWood(this.getFood()-200);
         this.setFood(this.getFood()-200);
-<<<<<<< HEAD
->>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
-=======
->>>>>>> 8fc8d40ec59c0eeeb737d4be23374aff4bca04c1
     }
 
     @Override
@@ -108,8 +77,6 @@ public class HunPlayer extends Player {
     public void createInfantry() {
 
     }
-<<<<<<< HEAD
-=======
 
     @Override
     public void run() {
@@ -124,5 +91,4 @@ public class HunPlayer extends Player {
             }
         }
     }
->>>>>>> f8ab10149dc34d3670659fd99a14ef80ca92c3b7
 }
