@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class RomanPlayer extends Player {
 
 
-    public RomanPlayer(Tile start){
+    public RomanPlayer(Tile start){ // takes starting position as input
         this.getBul().add(new RomanTownHall(start));
         this.start();
     }
