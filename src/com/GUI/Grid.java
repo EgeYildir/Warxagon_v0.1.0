@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
     private int width,height;
+    private Tile startLocation1,startLocation2; //preset starting locations for players.
 
     public Grid(int xSize,int ySize) {
         generateMap(xSize,ySize);
@@ -60,4 +61,11 @@ public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
         return r;
     }
 
+    public Tile getStartLocation1() {
+        return startLocation1;
+    }
+
+    public Tile getStartLocation2() {
+        return startLocation2;
+    }
 }

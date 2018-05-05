@@ -8,7 +8,7 @@ import units.soldiers.Soldier;
 
 import java.util.ArrayList;
 
-public abstract class Player implements Playable {
+public abstract class Player extends Thread implements Playable {
     private int gold;
     private int iron;
     private int wood;
@@ -26,7 +26,7 @@ public abstract class Player implements Playable {
         return gold;
     }
 
-    public void setGold(int gold) {
+    public synchronized void setGold(int gold) {
         this.gold = gold;
     }
 
@@ -34,7 +34,7 @@ public abstract class Player implements Playable {
         return iron;
     }
 
-    public void setIron(int iron) {
+    public synchronized void setIron(int iron) {
         this.iron = iron;
     }
 
@@ -42,7 +42,7 @@ public abstract class Player implements Playable {
         return wood;
     }
 
-    public void setWood(int wood) {
+    public synchronized void setWood(int wood) {
         this.wood = wood;
     }
 
@@ -50,7 +50,7 @@ public abstract class Player implements Playable {
         return food;
     }
 
-    public void setFood(int food) {
+    public synchronized void setFood(int food) {
         this.food = food;
     }
 
