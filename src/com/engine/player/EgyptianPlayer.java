@@ -85,9 +85,8 @@ public class EgyptianPlayer extends Player {
             this.setWood(this.getWood() +  EgyptianSawMills.getProductionPerCycle());
             this.setIron(this.getIron() + EgyptianMine.getProductionPerCycle());
             try {
-                currentThread().sleep(10000); //how long it will wait before incrementing again
-            } catch (InterruptedException e) {
-                continue;
+                sleep(10000); //how long it will wait before incrementing again
+            } catch (InterruptedException ignored) {
             }
         }
     }

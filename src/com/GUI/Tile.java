@@ -8,12 +8,14 @@ public class Tile extends Hexagon {
     private boolean isPassable;
     private int i,j;
     private Building b;
+    private double r;
 
 
     public Tile(double x, double y, double radius) {
         super(x, y, radius);
         isPassable=true;
         this.b = null;
+        this.r = radius;
     }
 
     public void setCoordinates(int i,int j){
@@ -41,7 +43,7 @@ public class Tile extends Hexagon {
     }
     public  boolean isNeighbor(Tile t){
         double a=this.distanceBetweenTiles(t);
-        return  a>1&&a<=Grid.neighborRad*Math.sqrt(3);
+        return  a>1&&a<=this.r*Math.sqrt(3);
     }
     public boolean equals(Tile t) {
         return (this.getI() == t.getI()) && (this.getJ() == t.getJ());

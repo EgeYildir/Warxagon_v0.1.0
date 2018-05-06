@@ -85,10 +85,9 @@ public class HunPlayer extends Player {
             this.setWood(this.getWood() + HunSawMills.getProductionPerCycle());
             this.setIron(this.getIron()+ HunMine.getProductionPerCycle());
             try {
-                currentThread().sleep(10000); //how long it will wait before incrementing again
-            } catch (InterruptedException e) {
-                continue;
-            }
+                sleep(10000); //how long it will wait before incrementing again
+            } catch (InterruptedException ignored) {
+                }
         }
     }
 }

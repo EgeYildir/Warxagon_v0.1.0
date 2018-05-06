@@ -84,9 +84,8 @@ public class RomanPlayer extends Player {
             this.setWood(this.getWood() +RomanFarm.getProductionPerCycle());
             this.setIron(this.getIron() +RomanMine.getProductionPerCycle());
         try {
-            currentThread().sleep(10000); //how long it will wait before incrementing again
-        } catch (InterruptedException e) {
-            continue;
+            sleep(10000); //how long it will wait before incrementing again
+        } catch (InterruptedException ignored) {
         }
         }
 
