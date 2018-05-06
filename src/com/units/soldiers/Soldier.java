@@ -1,6 +1,7 @@
-package com.units.soldiers;
+package units.soldiers;
 
-import com.grid.Tile;
+import gui.Map;
+import gui.Tile;
 import javafx.scene.image.ImageView;
 
 public abstract class Soldier {
@@ -19,6 +20,12 @@ public abstract class Soldier {
 
     public boolean isDead;
 
+    public Map map;
+
+    public int iIndex;
+
+    public int jIndex;
+
     public abstract ImageView getSource();
 
     public abstract void move(Tile[] a);
@@ -35,16 +42,20 @@ public abstract class Soldier {
 
     public abstract void battle();
 
-
-    public Soldier(int healthPower, int attackPower, int defensePower, int goldCost, int woodCost, int ironCost) {
+    public Soldier(Map map, int iIndex, int jIndex, int healthPower, int attackPower, int defensePower, int goldCost, int woodCost, int ironCost) {
         this.healthPower = healthPower;
         this.attackPower = attackPower;
         this.defensePower = defensePower;
         this.goldCost = goldCost;
         this.woodCost = woodCost;
         this.ironCost = ironCost;
+        this.map = map;
+        this.iIndex = iIndex;
+        this.jIndex = jIndex;
     }
 
+    public Soldier() {
+    }
 
 
     public int getHealthPower() {
@@ -98,7 +109,7 @@ public abstract class Soldier {
 
     @Override
     public String toString() {
-        return "Soldiers HP:"  + healthPower + " Soldiers Attack Power:" + attackPower + " Soldiers Defense Power:" + defensePower;
+        return "Soldiers HP:" + healthPower + " Soldiers Attack Power:" + attackPower + " Soldiers Defense Power:" + defensePower;
     }
 
 }

@@ -1,6 +1,6 @@
 package units.buildings.roman;
 
-import GUI.Tile;
+import gui.Tile;
 import units.buildings.Building;
 
 public class RomanMine extends Building {

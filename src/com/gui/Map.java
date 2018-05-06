@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import javafx.animation.AnimationTimer;
 import javafx.geometry.Rectangle2D;

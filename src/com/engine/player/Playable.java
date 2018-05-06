@@ -1,7 +1,6 @@
 package engine.player;
 
-import GUI.Tile;
-
+import gui.Tile;
 import units.buildings.Building;
 
 public interface Playable {     //This interface will hold vital gameplay commands that both player and ai can access easily.

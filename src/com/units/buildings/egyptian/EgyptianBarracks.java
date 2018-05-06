@@ -1,7 +1,7 @@
 package units.buildings.egyptian;
 
 
-import GUI.Tile;
+import gui.Tile;
 import units.buildings.Building;
 
 public class EgyptianBarracks extends Building {

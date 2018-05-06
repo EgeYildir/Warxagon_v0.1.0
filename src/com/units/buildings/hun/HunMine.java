@@ -1,6 +1,6 @@
 package units.buildings.hun;
 
-import GUI.Tile;
+import gui.Tile;
 import units.buildings.Building;
 
 public class HunMine extends Building {

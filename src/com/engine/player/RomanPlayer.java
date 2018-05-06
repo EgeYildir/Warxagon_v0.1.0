@@ -1,17 +1,13 @@
 package engine.player;
 
-import GUI.Tile;
+import gui.Tile;
 import units.buildings.Building;
-import units.buildings.egyptian.EgyptianFarm;
 import units.buildings.roman.*;
-
-
-import java.util.ArrayList;
 
 public class RomanPlayer extends Player {
 
 
-    public RomanPlayer(Tile start){ // takes starting position as input
+    public RomanPlayer(Tile start) { // takes starting position as input
         this.getBul().add(new RomanTownHall(start));
         this.start();
     }
@@ -22,9 +18,9 @@ public class RomanPlayer extends Player {
         RomanMine b = new RomanMine(t);
         this.getBul().add(b);
         t.setB(b);
-        this.setIron(this.getIron()-200);
-        this.setWood(this.getFood()-200);
-        this.setFood(this.getFood()-200);
+        this.setIron(this.getIron() - 200);
+        this.setWood(this.getFood() - 200);
+        this.setFood(this.getFood() - 200);
     }
 
     @Override
@@ -32,9 +28,9 @@ public class RomanPlayer extends Player {
         RomanFarm b = new RomanFarm(t);
         this.getBul().add(b);
         t.setB(b);
-        this.setIron(this.getIron()-200);
-        this.setWood(this.getFood()-200);
-        this.setFood(this.getFood()-200);
+        this.setIron(this.getIron() - 200);
+        this.setWood(this.getFood() - 200);
+        this.setFood(this.getFood() - 200);
     }
 
     @Override
@@ -42,9 +38,9 @@ public class RomanPlayer extends Player {
         RomanSawMills b = new RomanSawMills(t);
         this.getBul().add(b);
         t.setB(b);
-        this.setIron(this.getIron()-200);
-        this.setWood(this.getFood()-200);
-        this.setFood(this.getFood()-200);
+        this.setIron(this.getIron() - 200);
+        this.setWood(this.getFood() - 200);
+        this.setFood(this.getFood() - 200);
     }
 
     @Override
@@ -52,9 +48,9 @@ public class RomanPlayer extends Player {
         RomanBarracks b = new RomanBarracks(t);
         this.getBul().add(b);
         t.setB(b);
-        this.setIron(this.getIron()-200);
-        this.setWood(this.getFood()-200);
-        this.setFood(this.getFood()-200);
+        this.setIron(this.getIron() - 200);
+        this.setWood(this.getFood() - 200);
+        this.setFood(this.getFood() - 200);
     }
 
     @Override
@@ -62,9 +58,9 @@ public class RomanPlayer extends Player {
         RomanStoneWall b = new RomanStoneWall(t);
         this.getBul().add(b);
         t.setB(b);
-        this.setIron(this.getIron()-200);
-        this.setWood(this.getFood()-200);
-        this.setFood(this.getFood()-200);
+        this.setIron(this.getIron() - 200);
+        this.setWood(this.getFood() - 200);
+        this.setFood(this.getFood() - 200);
     }
 
     @Override
@@ -80,14 +76,13 @@ public class RomanPlayer extends Player {
     @Override
     public void run() { //increments resources after waiting for a preset time
         while (true) {
-            this.setFood(this.getFood() +RomanFarm.getProductionPerCycle());
-            this.setWood(this.getWood() +RomanFarm.getProductionPerCycle());
-            this.setIron(this.getIron() +RomanMine.getProductionPerCycle());
-        try {
-            currentThread().sleep(10000); //how long it will wait before incrementing again
-        } catch (InterruptedException e) {
-            continue;
-        }
+            this.setFood(this.getFood() + RomanFarm.getProductionPerCycle());
+            this.setWood(this.getWood() + RomanFarm.getProductionPerCycle());
+            this.setIron(this.getIron() + RomanMine.getProductionPerCycle());
+            try {
+                sleep(10000); //how long it will wait before incrementing again
+            } catch (InterruptedException ignored) {
+            }
         }
 
     }

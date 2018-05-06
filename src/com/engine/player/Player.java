@@ -1,10 +1,8 @@
 package engine.player;
 
 
-
 import units.buildings.Building;
 import units.soldiers.Soldier;
-
 
 import java.util.ArrayList;
 
@@ -17,11 +15,12 @@ public abstract class Player extends Thread implements Playable {
     private ArrayList<Building> bul;
 
     public Player() {
-        this.gold=5000;
-        this.iron=5000;
-        this.wood=5000;
-        this.food=5000;
+        this.gold = 5000;
+        this.iron = 5000;
+        this.wood = 5000;
+        this.food = 5000;
     }
+
     public synchronized int getGold() {
         return gold;
     }

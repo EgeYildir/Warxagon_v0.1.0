@@ -1,37 +1,34 @@
-package com.units.soldiers.hun;
+package units.soldiers;
 
-import com.grid.Grid;
-import com.grid.Tile;
-import com.main.Map;
-import com.units.soldiers.Soldier;
-import javafx.animation.AnimationTimer;
-import javafx.scene.image.Image;
+import gui.Map;
+import gui.Tile;
 import javafx.scene.image.ImageView;
 
 
-public class HunInfantry extends Soldier {//Aynı zamanda bir soldier objesi olması game Enginedeki Arraylistlerde  bize kolaylık sağlıyor.
+public class RomanInfantry extends Soldier {//Aynı zamanda bir soldier objesi olması game Enginedeki Arraylistlerde  bize kolaylık sağlıyor.
     ImageView source;//asıl işlem yapılacak image.
     private double dmg;//Şu anlık kullanılmıyor.
     private double velIndex;
     private boolean isInPath;//Eğer bir yolda yürüyorsa başka bir pathe sapmasını engelleyen boolean.
-
-
-    Map map;
     private Tile currentTile;
     private int iIndex, jIndex;
 
-    public HunInfantry(Map map, int iIndex, int jIndex, int healthPower, int attackPower, int defensePower, int goldCost, int woodCost, int ironCost) {
-
+    public RomanInfantry(Map map, int iIndex, int jIndex, int healthPower, int attackPower, int defensePower, int goldCost, int woodCost, int ironCost) {
+        super(map, iIndex, jIndex, healthPower, attackPower, defensePower, goldCost, woodCost, ironCost);
     }
 
 
-    @Override
     public Tile currentTile() {
         return currentTile;
     }
 
     public ImageView getSource() {
         return source;
+    }
+
+    @Override
+    public void move(Tile[] a) {
+
     }
 
     @Override

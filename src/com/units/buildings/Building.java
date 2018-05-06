@@ -1,7 +1,7 @@
 package units.buildings;
 
 
-import GUI.Tile;
+import gui.Tile;
 
 public abstract class Building {
     private int healthPower, woodCost, ironCost, foodCost;
