@@ -20,6 +20,8 @@ public abstract class Soldier implements Runnable {
 
     private int ironCost;
 
+    private Thread currentAssault;
+
     public boolean isDead;
 
     public Map map;
@@ -31,7 +33,7 @@ public abstract class Soldier implements Runnable {
 
     public void move(Stack<Tile> a) {
         this.path =  a;
-        new Thread(this).start();
+        currentAssault.start();
     }
 
     public abstract Tile currentTile();
@@ -49,6 +51,7 @@ public abstract class Soldier implements Runnable {
         this.iIndex = iIndex;
         this.jIndex = jIndex;
         this.path = null;
+        this.currentAssault = new Thread();
     }
 
     public Soldier() {
@@ -87,18 +90,21 @@ public abstract class Soldier implements Runnable {
     public String toString() {
         return "Soldiers HP:" + healthPower + " Soldiers Attack Power:" + attackPower + " Soldiers Defense Power:" + defensePower;
     }
-
+    public void interrupt() {
+        currentAssault.stop();
+    }
     @Override
     public void run() {
-        while (!(this.getPath().empty())) {
-            this.currentTile().removeSol(this);
-            this.getPath().pop().setSols(this);
-            try {
+        try {
+            while (!(this.getPath().empty())) {
+                this.currentTile().removeSol(this);
+                this.getPath().pop().setSols(this);
                 Thread.sleep(1000);
-            } catch (InterruptedException ignored) {
-
             }
+        }catch (InterruptedException ignored) {
+
         }
+
     }
 }
 

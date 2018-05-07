@@ -18,6 +18,7 @@ public interface Playable {     //This interface will hold vital gameplay comman
         List<Soldier> s = init.getSoldiers();
         Path p =new Path(s.get(0).currentTile(),target,g);
         for (Soldier sol:s) {
+            sol.interrupt();
             sol.move(p.getPath());
         }
     }
