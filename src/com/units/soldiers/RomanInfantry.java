@@ -4,32 +4,26 @@ import gui.Map;
 import gui.Tile;
 import javafx.scene.image.ImageView;
 
+import java.util.Stack;
+
 
 public class RomanInfantry extends Soldier {//Aynı zamanda bir soldier objesi olması game Enginedeki Arraylistlerde  bize kolaylık sağlıyor.
-    ImageView source;//asıl işlem yapılacak image.
-    private double dmg;//Şu anlık kullanılmıyor.
-    private double velIndex;
-    private boolean isInPath;//Eğer bir yolda yürüyorsa başka bir pathe sapmasını engelleyen boolean.
+
     private Tile currentTile;
     private int iIndex, jIndex;
 
-    public RomanInfantry(Map map, int iIndex, int jIndex, int healthPower, int attackPower, int defensePower, int goldCost, int woodCost, int ironCost) {
-        super(map, iIndex, jIndex, healthPower, attackPower, defensePower, goldCost, woodCost, ironCost);
+
+    public RomanInfantry(Tile t) {
+        super(t.getI(), t.getJ(), 1000, 100, 100);
     }
 
 
+
+    @Override
     public Tile currentTile() {
         return currentTile;
     }
 
-    public ImageView getSource() {
-        return source;
-    }
-
-    @Override
-    public void move(Tile[] a) {
-
-    }
 
     @Override
     public int getI() {
@@ -41,15 +35,7 @@ public class RomanInfantry extends Soldier {//Aynı zamanda bir soldier objesi o
         return jIndex;
     }
 
-    @Override
-    public boolean isInPath() {
-        return isInPath;
-    }
 
-    @Override
-    public void setIsInPath(boolean a) {
-        isInPath = a;
-    }
 
     @Override
     public void battle() {
@@ -58,4 +44,8 @@ public class RomanInfantry extends Soldier {//Aynı zamanda bir soldier objesi o
         }
     }
 
+    @Override
+    public void run() {
+
+    }
 }

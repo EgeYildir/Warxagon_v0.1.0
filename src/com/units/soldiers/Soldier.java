@@ -4,7 +4,9 @@ import gui.Map;
 import gui.Tile;
 import javafx.scene.image.ImageView;
 
-public abstract class Soldier {
+import java.util.Stack;
+
+public abstract class Soldier implements Runnable {
 
     private int healthPower;
 
@@ -25,10 +27,12 @@ public abstract class Soldier {
     public int iIndex;
 
     public int jIndex;
+    private Stack<Tile> path;
 
-    public abstract ImageView getSource();
-
-    public abstract void move(Tile[] a);
+    public void move(Stack<Tile> a) {
+        this.path =  a;
+        new Thread(this).start();
+    }
 
     public abstract Tile currentTile();
 
@@ -36,22 +40,15 @@ public abstract class Soldier {
 
     public abstract int getJ();
 
-    public abstract boolean isInPath();
-
-    public abstract void setIsInPath(boolean a);
-
     public abstract void battle();
 
-    public Soldier(Map map, int iIndex, int jIndex, int healthPower, int attackPower, int defensePower, int goldCost, int woodCost, int ironCost) {
+    public Soldier(int iIndex, int jIndex, int healthPower, int attackPower, int defensePower) {
         this.healthPower = healthPower;
         this.attackPower = attackPower;
         this.defensePower = defensePower;
-        this.goldCost = goldCost;
-        this.woodCost = woodCost;
-        this.ironCost = ironCost;
-        this.map = map;
         this.iIndex = iIndex;
         this.jIndex = jIndex;
+        this.path = null;
     }
 
     public Soldier() {
@@ -82,35 +79,26 @@ public abstract class Soldier {
         this.defensePower = defensePower;
     }
 
-    public int getGoldCost() {
-        return goldCost;
+    public synchronized Stack<Tile> getPath() {
+        return path;
     }
-
-    public void setGoldCost(int goldCost) {
-        this.goldCost = goldCost;
-    }
-
-    public int getWoodCost() {
-        return woodCost;
-    }
-
-    public void setWoodCost(int woodCost) {
-        this.woodCost = woodCost;
-    }
-
-    public int getIronCost() {
-        return ironCost;
-    }
-
-    public void setIronCost(int ironCost) {
-        this.ironCost = ironCost;
-    }
-
 
     @Override
     public String toString() {
         return "Soldiers HP:" + healthPower + " Soldiers Attack Power:" + attackPower + " Soldiers Defense Power:" + defensePower;
     }
 
+    @Override
+    public void run() {
+        while (!(this.getPath().empty())) {
+            this.currentTile().removeSol(this);
+            this.getPath().pop().setSols(this);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ignored) {
+
+            }
+        }
+    }
 }
 

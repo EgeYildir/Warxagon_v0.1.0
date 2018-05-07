@@ -65,10 +65,6 @@ public class EgyptianPlayer extends Player {
         this.setFood(this.getFood() - 200);
     }
 
-    @Override
-    public void levelUp(Building b) {
-
-    }
 
     @Override
     public void createInfantry() {

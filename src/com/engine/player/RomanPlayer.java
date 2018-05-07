@@ -9,7 +9,7 @@ public class RomanPlayer extends Player {
 
     public RomanPlayer(Tile start) { // takes starting position as input
         this.getBul().add(new RomanTownHall(start));
-        this.start();
+        new Thread(this).start();
     }
 
 
@@ -68,10 +68,6 @@ public class RomanPlayer extends Player {
 
     }
 
-    @Override
-    public void levelUp(Building b) {
-
-    }
 
     @Override
     public void run() { //increments resources after waiting for a preset time

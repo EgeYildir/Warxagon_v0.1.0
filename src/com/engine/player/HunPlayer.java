@@ -1,5 +1,6 @@
 package engine.player;
 
+import gui.Grid;
 import gui.Tile;
 import units.buildings.Building;
 import units.buildings.hun.*;
@@ -63,11 +64,6 @@ public class HunPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
-    }
-
-    @Override
-    public void levelUp(Building b) {
-
     }
 
     @Override

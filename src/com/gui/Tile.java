@@ -18,6 +18,7 @@ public class Tile extends Hexagon {
     private boolean isPassable;
     private int i, j;
     private Building b;
+    private List<Soldier> sols;
     private double r;
 
     public Tile(double x, double y, double radius) {
@@ -25,6 +26,7 @@ public class Tile extends Hexagon {
         isPassable = true;
         this.b = null;
         this.r = radius;
+        this.sols = new ArrayList<>();
     }
 
     public void setCoordinates(int i, int j) {
@@ -124,7 +126,7 @@ public class Tile extends Hexagon {
         }
     }
 
-    public void battle(Soldier s1, Soldier s2) { //Takes individual soldiers in each nations for once recursion will be used.
+    public synchronized void battle(Soldier s1, Soldier s2) { //Takes individual soldiers in each nations for once recursion will be used.
         while (!s1.isDead && !s2.isDead) {
             Random rand = new Random();
             int x = rand.nextInt(10);
@@ -168,7 +170,7 @@ public class Tile extends Hexagon {
         }
     }
 
-    public int encounter() { //Search for tile whether which 2 nations are in and returns them to battle.
+    public synchronized int encounter() { //Search for tile whether which 2 nations are in and returns them to battle.
         boolean roman = false;
         boolean hun = false;
         boolean egyptian = false;
@@ -214,5 +216,12 @@ public class Tile extends Hexagon {
             }
         }
         return sols;
+    }
+
+    public synchronized void setSol(Soldier s) {
+        //TODO: add given list to the sols arraylist and check for battles.
+    }
+    public synchronized void removeSol(Soldier s) {
+
     }
 }
