@@ -101,7 +101,7 @@ public abstract class Soldier implements Runnable {
                 this.getPath().pop().setSols(this);
                 Thread.sleep(1000);
             }
-        }catch (InterruptedException ignored) {
+        }   catch (InterruptedException ignored) {
 
         }
 
