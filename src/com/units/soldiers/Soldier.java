@@ -92,7 +92,7 @@ public abstract class Soldier implements Runnable {
     public void run() {
         while (!(this.getPath().empty())) {
             this.currentTile().removeSol(this);
-            this.getPath().pop().setSol(this);
+            this.getPath().pop().setSols(this);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ignored) {

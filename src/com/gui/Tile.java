@@ -160,14 +160,12 @@ public class Tile extends Hexagon {
                 s1.setAttackPower(0);
                 s1.setDefensePower(0);
                 s1.isDead = true;
-                this.removeSol(s1);
             }
             if (s2.getHealthPower() <= 0) {
                 s2.setHealthPower(0);
                 s2.setAttackPower(0);
                 s2.setDefensePower(0);
                 s2.isDead = true;
-                this.removeSol(s2);
             }
         }
     }
