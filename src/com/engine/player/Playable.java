@@ -33,6 +33,5 @@ public interface Playable {     //This interface will hold vital gameplay comman
 
     void buildStonewall(Tile t);
 
-
     void createInfantry();
 }
