@@ -44,8 +44,4 @@ public class HunInfantry extends Soldier {//Aynı zamanda bir soldier objesi olm
         }
     }
 
-    @Override
-    public void run() {
-
-    }
 }

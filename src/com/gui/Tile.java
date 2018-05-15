@@ -220,7 +220,7 @@ public class Tile extends Hexagon {
         return sols;
     }
 
-    public synchronized void setSol(Soldier s) {
+    public synchronized void setSols(Soldier s) {
         //TODO: add given list to the sols arraylist and check for battles.
     }
     public synchronized void removeSol(Soldier s) {

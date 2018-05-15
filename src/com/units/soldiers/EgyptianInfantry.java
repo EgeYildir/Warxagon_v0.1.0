@@ -42,8 +42,4 @@ public class EgyptianInfantry extends Soldier {//Aynı zamanda bir soldier objes
         }
     }
 
-    @Override
-    public void run() {
-
-    }
 }

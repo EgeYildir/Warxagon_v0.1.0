@@ -44,8 +44,4 @@ public class RomanInfantry extends Soldier {//Aynı zamanda bir soldier objesi o
         }
     }
 
-    @Override
-    public void run() {
-
-    }
 }

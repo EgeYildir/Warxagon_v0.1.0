@@ -57,11 +57,16 @@ public class Map extends Group {
 
     }
 
+    public Grid getGrid() {
+        return grid;
+    }
+
     private void addAllTileToMap(){
         for (int i=0;i<grid.getSizeX();i++) {
             for (int j=0; j < grid.getSizeX(); j++) {
                 getChildren().add(grid.get(i,j));
             }
+
         }
     }
 
