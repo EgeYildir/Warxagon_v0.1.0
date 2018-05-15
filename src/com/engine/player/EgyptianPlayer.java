@@ -23,6 +23,7 @@ public class EgyptianPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
+        this.mines++;
     }
 
     @Override
@@ -33,6 +34,7 @@ public class EgyptianPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
+        this.farms++;
     }
 
     @Override
@@ -43,6 +45,7 @@ public class EgyptianPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
+        this.sawmills++;
     }
 
     @Override
@@ -74,9 +77,9 @@ public class EgyptianPlayer extends Player {
     @Override
     public void run() {
         while (true) {
-            this.setFood(this.getFood() + EgyptianFarm.getProductionPerCycle());
-            this.setWood(this.getWood() + EgyptianSawMills.getProductionPerCycle());
-            this.setIron(this.getIron() + EgyptianMine.getProductionPerCycle());
+            this.setFood(this.getFood() + this.farms * EgyptianFarm.getProductionPerCycle());
+            this.setWood(this.getWood() + this.sawmills*EgyptianSawMills.getProductionPerCycle());
+            this.setIron(this.getIron() + this.mines*EgyptianMine.getProductionPerCycle());
             try {
                 sleep(10000); //how long it will wait before incrementing again
             } catch (InterruptedException ignored) {

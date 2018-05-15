@@ -24,6 +24,7 @@ public class HunPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
+        this.mines++;
     }
 
     @Override
@@ -34,6 +35,7 @@ public class HunPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
+        this.farms++;
     }
 
     @Override
@@ -44,6 +46,7 @@ public class HunPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
+        this.sawmills++;
     }
 
     @Override
@@ -74,9 +77,9 @@ public class HunPlayer extends Player {
     @Override
     public void run() {
         while (true) {
-            this.setFood(this.getFood() + HunFarm.getProductionPerCycle());
-            this.setWood(this.getWood() + HunSawMills.getProductionPerCycle());
-            this.setIron(this.getIron() + HunMine.getProductionPerCycle());
+            this.setFood(this.getFood() + this.farms*HunFarm.getProductionPerCycle());
+            this.setWood(this.getWood() + this.sawmills*HunSawMills.getProductionPerCycle());
+            this.setIron(this.getIron() + this.mines*HunMine.getProductionPerCycle());
             try {
                 sleep(10000); //how long it will wait before incrementing again
             } catch (InterruptedException ignored) {

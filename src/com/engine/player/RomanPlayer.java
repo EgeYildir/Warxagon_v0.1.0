@@ -18,6 +18,7 @@ public class RomanPlayer extends Player {
         RomanMine b = new RomanMine(t);
         this.getBul().add(b);
         t.setB(b);
+        this.mines++;
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
@@ -31,6 +32,7 @@ public class RomanPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
+        this.farms++;
     }
 
     @Override
@@ -41,6 +43,7 @@ public class RomanPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
+        this.sawmills++;
     }
 
     @Override
@@ -72,9 +75,9 @@ public class RomanPlayer extends Player {
     @Override
     public void run() { //increments resources after waiting for a preset time
         while (true) {
-            this.setFood(this.getFood() + RomanFarm.getProductionPerCycle());
-            this.setWood(this.getWood() + RomanFarm.getProductionPerCycle());
-            this.setIron(this.getIron() + RomanMine.getProductionPerCycle());
+            this.setFood(this.getFood() + this.farms*  RomanFarm.getProductionPerCycle());
+            this.setWood(this.getWood() + this.sawmills *  RomanFarm.getProductionPerCycle());
+            this.setIron(this.getIron() + this.mines* RomanMine.getProductionPerCycle());
             try {
                 sleep(10000); //how long it will wait before incrementing again
             } catch (InterruptedException ignored) {
