@@ -28,6 +28,8 @@ public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
 
             }
         }
+        this.startLocation1 =  this.get(0,0);
+        this.startLocation2 = this.get(1,1);
     }
 
 

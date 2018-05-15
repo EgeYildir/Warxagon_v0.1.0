@@ -11,6 +11,7 @@ public abstract class Player extends Thread implements Playable {
     private int iron;
     private int wood;
     private int food;
+    protected int sawmills,mines,farms;
     private ArrayList<Soldier> sol;
     private ArrayList<Building> bul;
 
@@ -19,6 +20,9 @@ public abstract class Player extends Thread implements Playable {
         this.iron = 5000;
         this.wood = 5000;
         this.food = 5000;
+        this.bul = new ArrayList<Building>();
+        this.sol = new ArrayList<Soldier>();
+
     }
 
     public synchronized int getGold() {
