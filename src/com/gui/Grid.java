@@ -11,8 +11,10 @@ public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
 
     public Grid(int xSize,int ySize) {
         generateMap(xSize,ySize);
-        width=xSize;
-        height=ySize;
+        this.startLocation1 = this.get(0,0);
+        this.startLocation2 = this.get(0,2);
+        this.width=xSize;
+        this.height=ySize;
     }
 
     private void generateMap(int xSize,int ySize){
@@ -28,6 +30,8 @@ public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
 
             }
         }
+        this.startLocation1 =  this.get(0,0);
+        this.startLocation2 = this.get(1,1);
     }
 
 
