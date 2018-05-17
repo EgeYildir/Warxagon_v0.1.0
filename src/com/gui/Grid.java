@@ -60,7 +60,7 @@ public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
         return j;
     }
 
-    //necessery methods for pathfinder
+    //necessary methods for pathfinder
     public ArrayList<Tile> getNeighbors(Tile t) {
         ArrayList<Tile> r = new ArrayList<>();
         int x1 = t.getI();

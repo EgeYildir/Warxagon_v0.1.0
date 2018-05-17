@@ -7,7 +7,6 @@ import units.soldiers.Soldier;
 import java.util.ArrayList;
 
 public abstract class Player extends Thread implements Playable {
-    private int gold;
     private int iron;
     private int wood;
     private int food;
@@ -17,7 +16,6 @@ public abstract class Player extends Thread implements Playable {
     ArrayList<Building> barracks;
 
     public Player() {
-        this.gold = 5000;
         this.iron = 5000;
         this.wood = 5000;
         this.food = 5000;
@@ -25,14 +23,6 @@ public abstract class Player extends Thread implements Playable {
         this.sol = new ArrayList<Soldier>();
         this.barracks = new ArrayList<Building>();
 
-    }
-
-    public synchronized int getGold() {
-        return gold;
-    }
-
-    public synchronized void setGold(int gold) {
-        this.gold = gold;
     }
 
     public synchronized int getIron() {

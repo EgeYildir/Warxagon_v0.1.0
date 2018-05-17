@@ -1,6 +1,5 @@
 package gui;
 
-import engine.AI.Build;
 import engine.GameEngine;
 import units.buildings.Building;
 import units.buildings.hun.HunBarracks;
@@ -9,7 +8,6 @@ import units.soldiers.HunInfantry;
 import units.soldiers.RomanInfantry;
 import units.soldiers.Soldier;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -23,7 +21,16 @@ public class Tile extends Hexagon {
     private Building b;
     private List<Soldier> sols;
 
+    public Building getB() {
+        return b;
+    }
+
+    public void setSols(List<Soldier> sols) {
+        this.sols = sols;
+    }
+
     public List<Soldier> getSols() {
+
         return sols;
     }
 

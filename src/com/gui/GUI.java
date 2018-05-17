@@ -101,7 +101,7 @@ public class GUI extends Application {
     private void startGame(){
         mainPane.getChildren().add(map);
         bar();
-        GameEngine gameEngine = new GameEngine(map.getGrid(),factor);
+        GameEngine gameEngine = new GameEngine(map,factor);
         gameScene = new Scene(mainPane);
         window.setScene(gameScene);
         window.setFullScreen(true);
