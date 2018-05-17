@@ -1,11 +1,12 @@
 package engine.player;
 
 import gui.Tile;
+import javafx.scene.control.Button;
 import units.buildings.Building;
 import units.buildings.egyptian.*;
 import units.buildings.roman.RomanTownHall;
 
-public class EgyptianPlayer extends Player {
+public class EgyptianPlayer extends Player{
 
 
     public EgyptianPlayer(Tile start) {

@@ -1,7 +1,9 @@
 package units.soldiers;
 
+import gui.GUI;
 import gui.Map;
 import gui.Tile;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.Stack;
@@ -20,6 +22,7 @@ public abstract class Soldier implements Runnable {
 
     private int ironCost;
 
+    public ImageView image= new ImageView(new Image(GUI.class.getResource("sol.png").toExternalForm()));
     private Thread currentAssault;
 
     public boolean isDead;

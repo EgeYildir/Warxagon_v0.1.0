@@ -6,11 +6,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
-    private int width,height;
+    private int width;
+    private int height;
+    private int i;
+
+
+
+    private int j;
     private Tile startLocation1,startLocation2; //preset starting locations for players.
 
     public Grid(int xSize,int ySize) {
         generateMap(xSize,ySize);
+        i=xSize;
+        j=ySize;
         this.startLocation1 = this.get(0,0);
         this.startLocation2 = this.get(0,2);
         this.width=xSize;
@@ -45,6 +53,13 @@ public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
     }
     public int getSizeX(){return width;  }
     public int getSizeY(){return height;  }
+    public int getI() {
+        return i;
+    }
+    public int getJ() {
+        return j;
+    }
+
     //necessery methods for pathfinder
     public ArrayList<Tile> getNeighbors(Tile t) {
         ArrayList<Tile> r = new ArrayList<>();
@@ -64,6 +79,7 @@ public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
         }
         return r;
     }
+
 
     public Tile getStartLocation1() {
         return startLocation1;

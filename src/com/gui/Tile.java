@@ -1,12 +1,15 @@
 package gui;
 
+import engine.AI.Build;
 import engine.GameEngine;
 import units.buildings.Building;
+import units.buildings.hun.HunBarracks;
 import units.soldiers.EgyptianInfantry;
 import units.soldiers.HunInfantry;
 import units.soldiers.RomanInfantry;
 import units.soldiers.Soldier;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -19,6 +22,11 @@ public class Tile extends Hexagon {
     private int i, j;
     private Building b;
     private List<Soldier> sols;
+
+    public List<Soldier> getSols() {
+        return sols;
+    }
+
     private double r;
 
     public Tile(double x, double y, double radius) {
@@ -47,15 +55,16 @@ public class Tile extends Hexagon {
     }
 
     public double distanceBetweenTiles(Tile t) {
-        double x1 = this.getLayoutX();
-        double y1 = this.getLayoutY();
-        double x2 = t.getLayoutX();
-        double y2 = t.getLayoutY();
+        double x1 = this.getTranslateX();
+        double y1 = this.getTranslateY();
+        double x2 = t.getTranslateX();
+        double y2 = t.getTranslateY();
         return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
     }
 
     public boolean isNeighbor(Tile t) {
         double a = this.distanceBetweenTiles(t);
+        System.out.println(a);
         return  a>1&&a<=this.r*Math.sqrt(3);
     }
 
@@ -63,10 +72,31 @@ public class Tile extends Hexagon {
         return (this.getI() == t.getI()) && (this.getJ() == t.getJ());
     }
 
-    public void setB(Building b) {
-        this.b = b;
-        this.isPassable = false;
+
+
+    public void setListener(Map map){
+        setOnMouseClicked( e -> {
+            if ( CHECK.buildingcheck.canDo(i,j) ){
+                b = new HunBarracks(this);
+                b.getImage().setTranslateX(getTranslateX() - 40);
+                b.getImage().setTranslateY(getTranslateY() - 40);
+                map.getChildren().add(b.getImage());
+                isPassable=false;
+                b.setListener(map,this);
+            }
+        });
     }
+
+
+    public void setB(Building b){}
+
+
+
+
+    /*
+    *   AUTHOR: Doğukan İNCE
+    * */
+
 
     public void battle(int i) { //Checks the soldiers in a tile and separates the nations and battles between nations.
         boolean rh = false;
@@ -220,10 +250,12 @@ public class Tile extends Hexagon {
         return sols;
     }
 
+
     public synchronized void setSols(Soldier s) {
         //TODO: add given list to the sols arraylist and check for battles.
     }
     public synchronized void removeSol(Soldier s) {
 
     }
+
 }

@@ -21,7 +21,7 @@ public class GameEngine {
     public GameEngine(Grid g, int selectedFaction) {
         this.grid = g;
         this.p1 = selectPlayer(selectedFaction);
-        this.p2 = selectPlayer(); //randomises the ai controlled player.
+        this.p2 = selectPlayer();//randomises the ai controlled player.
 
         //this.ai = new Ai(p2); // starts the ai that controls player2.
 

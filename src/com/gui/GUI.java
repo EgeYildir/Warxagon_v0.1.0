@@ -9,7 +9,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import units.soldiers.HunInfantry;
+import units.soldiers.Soldier;
 
 import javax.imageio.ImageIO;
 import java.io.File;
@@ -27,6 +30,7 @@ public class GUI extends Application {
     Stage window;
     private Scene gameScene;
     private Map map = new Map();
+    private Group mainPane=new Group();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -62,16 +66,15 @@ public class GUI extends Application {
 
         String style =
                 "-fx-text-color:aqua;" +
-                        "-fx-padding:15px;" +
-                        "-fx-font-weight:bolder;" +
-                        "-fx-background-color : blue;" +
+                "-fx-padding:15px;" +
+                "-fx-font-weight:bolder;" +
+                "-fx-background-color : blue;" +
                 "-fx-min-width:150px;" +
                 "-fx-min-height:50px;" +
                 "-fx-border-width:5px;" +
-                        "-fx-border-color:aqua;" +
-                    "-fx-border-radius:17px;"  +
+                "-fx-border-color:aqua;" +
+                "-fx-border-radius:17px;"  +
                 "-fx-background-radius:17px;" +
-
                 "-fx-font-size: 24px;";
 
         hun.setStyle(style);roman.setStyle(style);egyptian.setStyle(style);play.setStyle(style);
@@ -96,11 +99,46 @@ public class GUI extends Application {
 
     }
     private void startGame(){
+        mainPane.getChildren().add(map);
+        bar();
         GameEngine gameEngine = new GameEngine(map.getGrid(),factor);
-        gameScene = new Scene(map);
+        gameScene = new Scene(mainPane);
         window.setScene(gameScene);
         window.setFullScreen(true);
     }
+
+    private void preLoad(){
+
+    }
+
+    private void update(){
+
+    }
+
+
+    private void bar(){
+        Group bar = new Group();
+        bar.minWidth(Screen.getPrimary().getVisualBounds().getWidth());
+        bar.minHeight(100);
+        bar.setTranslateY(Screen.getPrimary().getVisualBounds().getHeight()-100);
+        bar.setStyle("-fx-background-color:brown;");
+
+        Button addBuild = new Button("ADD BUILDING");
+        addBuild.setMinSize(200,50);
+        addBuild.setTranslateX(125);addBuild.setTranslateY(25);
+
+        addBuild.setOnAction(event -> CHECK.buildingcheck.selected=true);
+
+
+
+        bar.getChildren().add(addBuild);
+        mainPane.getChildren().add(bar);
+
+    }
+
+
+
+
 
 
 

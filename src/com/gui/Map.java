@@ -3,12 +3,14 @@ package gui;
 import javafx.animation.AnimationTimer;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Screen;
 
 public class Map extends Group {
     private Grid grid;
-
+    private ImageView soldierImg=new ImageView(new Image(GUI.class.getResource("romanianInfantry.png").toExternalForm()));
     private double width,height;
     private boolean canRight,canLeft,canUp,canDown;
 
@@ -18,6 +20,7 @@ public class Map extends Group {
         setOnActions();
         width=18*70;
         height=18*70;
+        setTileListeners();
     }
 
     public Map(int xSize,int ySize) {
@@ -30,12 +33,7 @@ public class Map extends Group {
         double shiftVel=10;
         Rectangle2D root=Screen.getPrimary().getVisualBounds();
 
-        setOnKeyPressed(event -> {
-            if(event.getCode()== KeyCode.SPACE){
-                setTranslateX(0);
-                setTranslateY(0);
-            }
-        });
+
 
         setOnMouseMoved(event -> {
             canUp=event.getSceneY()<100;
@@ -47,7 +45,7 @@ public class Map extends Group {
         new AnimationTimer(){
             @Override
             public void handle(long now) {
-                if(canUp) setTranslateY(getTranslateY()+shiftVel);
+                if(canUp&&getTranslateX()<height/2) setTranslateY(getTranslateY()+shiftVel);
                 if(canDown&&getTranslateY()>-1*height-root.getHeight()/2) setTranslateY(getTranslateY()-shiftVel);
                 if(canRight&&getTranslateY()<width/2) setTranslateX(getTranslateX()+shiftVel);
                 if(canLeft&&getTranslateY()>-1*height-root.getWidth()/2) setTranslateX(getTranslateX()-shiftVel);
@@ -57,6 +55,15 @@ public class Map extends Group {
 
     }
 
+    private void setTileListeners(){
+        for(int i=0; i < grid.getI();i++){
+            for ( int j = 0; j < grid.getJ(); j++ ){
+                grid.get(i,j).setListener(this);
+
+            }
+        }
+
+    }
     public Grid getGrid() {
         return grid;
     }
@@ -69,12 +76,15 @@ public class Map extends Group {
 
         }
     }
+    public void update(){
 
+    }
 
 
     public Tile getTile(int i,int j){
         return grid.get(i,j);
     }
+
 
 
 }
