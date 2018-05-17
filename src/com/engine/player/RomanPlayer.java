@@ -1,8 +1,14 @@
 package engine.player;
 
+import gui.Grid;
 import gui.Tile;
 import units.buildings.Building;
 import units.buildings.roman.*;
+import units.soldiers.RomanInfantry;
+import units.soldiers.Soldier;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RomanPlayer extends Player {
 
@@ -54,6 +60,7 @@ public class RomanPlayer extends Player {
         this.setIron(this.getIron() - 200);
         this.setWood(this.getFood() - 200);
         this.setFood(this.getFood() - 200);
+        this.barracks.add(b);
     }
 
     @Override
@@ -67,9 +74,22 @@ public class RomanPlayer extends Player {
     }
 
     @Override
-    public void createInfantry() {
+    public void createInfantry(Building b, Grid g) {
+        if (b instanceof RomanBarracks || this.barracks.contains(b)) {
+            List<Tile> spawnLocations = g.getNeighbors(b.getT());
+            for (int i = 0;i<6;i++) {
+                if (spawnLocations.get(i).isPassable()) {
+                    ArrayList<Soldier> temp = new ArrayList<>();
+                    for (int x =0;x<5;x++) {
+                        temp.add(new RomanInfantry(spawnLocations.get(i)));
+                    }
+                    spawnLocations.get(i).setSols(temp);
+                    break;
+                    }
+                }
+            }
+        }
 
-    }
 
 
     @Override

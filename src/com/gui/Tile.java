@@ -68,7 +68,7 @@ public class Tile extends Hexagon {
         this.isPassable = false;
     }
 
-    public void battle(int i) { //Checks the soldiers in a tile and separates the nations and battles between nations.
+    public synchronized void  battle(int i) { //Checks the soldiers in a tile and separates the nations and battles between nations.
         boolean rh = false;
         boolean he = false;
         boolean re = false;
@@ -111,7 +111,7 @@ public class Tile extends Hexagon {
         }
     }
 
-    public void battle(List<Soldier> s1, List<Soldier> s2) { //Separates the soldiers in each nations and battles.
+    public synchronized void battle(List<Soldier> s1, List<Soldier> s2) { //Separates the soldiers in each nations and battles.
         if (s1.size() > 0 && s2.size() > 0) {
             Iterator<Soldier> i1 = s1.iterator();
             Iterator<Soldier> i2 = s2.iterator();
@@ -206,7 +206,7 @@ public class Tile extends Hexagon {
         return 0;
     }
 
-    public List<Soldier> getSoldiers() {  //Return whole soldiers in a specific tile.
+    public synchronized List<Soldier> getSoldiers() {  //Return whole soldiers in a specific tile.
         List<Soldier> soldiers = GameEngine.soldiers;
         List<Soldier> sols = new ArrayList<>();
         Iterator i = soldiers.iterator();
@@ -220,10 +220,13 @@ public class Tile extends Hexagon {
         return sols;
     }
 
-    public synchronized void setSols(Soldier s) {
-        //TODO: add given list to the sols arraylist and check for battles.
+    public synchronized void setSols(List<Soldier> s) {
+        this.sols.addAll(s);
+        this.battle(this.encounter());
     }
     public synchronized void removeSol(Soldier s) {
+        this.sols.remove(s);
+        s.interrupt();
 
     }
 }

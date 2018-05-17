@@ -18,6 +18,9 @@ public abstract class Building {
         this.t.setB(this);
     }
 
+    public Tile getT() {
+        return t;
+    }
 
     public int getHealthPower() {
         return healthPower;
@@ -35,8 +38,5 @@ public abstract class Building {
         return foodCost;
     }
 
-    public void build() {
-
-    }
 
 }
