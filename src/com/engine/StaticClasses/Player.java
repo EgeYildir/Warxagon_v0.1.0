@@ -11,6 +11,6 @@ public class Player {
     private static int wood;
     private static int food;
 
-    static ArrayList<Soldier> sol;
+    public static ArrayList<Soldier> sol;
     static ArrayList<Building> bul;
 }

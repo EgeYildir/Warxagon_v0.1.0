@@ -80,6 +80,27 @@ public class Grid extends HashMap<Pair<Integer,Integer>,Tile> {
         return r;
     }
 
+    public ArrayList<Tile> getAllNeighbors(ArrayList<Tile> t){
+        ArrayList<Tile> r = new ArrayList<>();
+        for(int k = 0; k<0;k++) {
+            int x1 = t.get(k).getI();
+            int y1 = t.get(k).getJ();
+            for (int i = x1 - 1; i <= x1 + 1; i++) {
+                for (int j = y1 - 1; j <= y1 + 1; j++) {
+                    if (i > -1 && j > -1 && (i != x1 || j != y1) && (i != this.getSizeX() && j != this.getSizeY())) {
+                        if (t.isNeighbor(this.get(i, j)) && this.get(i, j).isPassable()) {
+                            r.add(this.get(i, j));
+
+                        }
+                    }
+
+                }
+
+            }
+        }
+        return r;
+    }
+
 
     public Tile getStartLocation1() {
         return startLocation1;

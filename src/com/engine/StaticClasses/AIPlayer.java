@@ -13,8 +13,8 @@ public class AIPlayer {
     private static int wood;
     private static int food;
 
-    static ArrayList<Soldier> sol;
-    static ArrayList<Building> bul;
+    public static ArrayList<Soldier> sol;
+    public static ArrayList<Building> bul;
      static Map map;
 
 
